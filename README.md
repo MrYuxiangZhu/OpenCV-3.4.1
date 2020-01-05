@@ -1,5 +1,5 @@
 # OpenCV-3.4.1
-OpenCV-3.4.1
+安装OpenCV-3.4.1步骤：
 1. build_x86.sh、build_arm.sh分别对应于x86和ARM。
 2. 首先确保ubuntu系统可以联网，进入root。
 3. 在终端输入./build_x86.sh，如果不能运行，则输入chmod 777 -R ./* 。
