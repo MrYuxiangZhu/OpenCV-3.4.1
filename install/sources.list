@@ -1,0 +1,24 @@
+#deb http://mirrors.ustc.edu.cn/ubuntu-ports/dists/ trusty main universe restricted multiverse 
+#deb http://mirrors.ustc.edu.cn/ubuntu-ports/dists/ trusty-security main universe restricted multiverse 
+#deb http://mirrors.ustc.edu.cn/ubuntu-ports/dists/ trusty-updates main universe restricted multiverse 
+#deb-src http://mirrors.ustc.edu.cn/ubuntu-ports/dists/ trusty main universe restricted multiverse 
+#deb-src http://mirrors.ustc.edu.cn/ubuntu-ports/dists/ trusty-security main universe restricted multiverse 
+#deb-src http://mirrors.ustc.edu.cn/ubuntu-ports/dists/ trusty-updates main universe restricted multiverse
+
+#deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/dists/ trusty main universe restricted multiverse 
+#deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/dists/ trusty-security main universe restricted multiverse 
+#deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/dists/ trusty-updates main universe restricted multiverse 
+#deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/dists/ trusty main universe restricted multiverse 
+#deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/dists/ trusty-security main universe restricted multiverse 
+#deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/dists/ trusty-updates main universe restricted multiverse
+
+deb http://mirrors.ustc.edu.cn/ubuntu-ports/ trusty main multiverse restricted universe
+deb http://mirrors.ustc.edu.cn/ubuntu-ports/ trusty-backports main multiverse restricted universe
+deb http://mirrors.ustc.edu.cn/ubuntu-ports/ trusty-proposed main multiverse restricted universe
+deb http://mirrors.ustc.edu.cn/ubuntu-ports/ trusty-security main multiverse restricted universe
+deb http://mirrors.ustc.edu.cn/ubuntu-ports/ trusty-updates main multiverse restricted universe
+deb-src http://mirrors.ustc.edu.cn/ubuntu-ports/ trusty main multiverse restricted universe
+deb-src http://mirrors.ustc.edu.cn/ubuntu-ports/ trusty-backports main multiverse restricted universe
+deb-src http://mirrors.ustc.edu.cn/ubuntu-ports/ trusty-proposed main multiverse restricted universe
+deb-src http://mirrors.ustc.edu.cn/ubuntu-ports/ trusty-security main multiverse restricted universe
+deb-src http://mirrors.ustc.edu.cn/ubuntu-ports/ trusty-updates main multiverse restricted universe

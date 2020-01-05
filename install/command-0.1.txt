@@ -1,0 +1,68 @@
+apt-get update&&apt-get upgrade&&apt-get install build-essential cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev libavcodec-dev libavformat-dev libswscale-dev libv4l-dev liblapacke-dev libxvidcore-dev libx264-dev libatlas-base-dev gfortran yasm ffmpeg
+
+apt-get install build-essential libgtk2.0-dev libvtk5-dev libjpeg-dev libtiff4-dev libjasper-dev libopenexr-dev libtbb-dev  
+
+
+fedora:
+dnf install gcc gcc-c++ cmake ncurses-devel gtk2 gtk2-devel gtk2-devel-docs libgnome-devel gnome-devel-docs zlib glib atk pango gdk-pixbuf2 gdk-pixbuf2-devel gtk+ gtk2-devel pkgconfig python-devel python-numpydoc libavc1394 libavc1394-devel libdc1394 libdc1394-devel jasper-devel 
+
+su -c 'dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm'
+
+
+mkdir build
+cd build
+cmake -D CMAKE_BUILD_TYPE=TELEASE \
+-D CMAKE_INSTALL_PREFIX=/usr/local \
+-D INSTALL_C_EXAMPLE=OFF \
+-D INSTALL_PYTHON_EXAMPLE=ON \
+-D OPENCV_EXTRA_MODULES_PATH=/home/yuxiang/demo/opencv_contrib-3.4.1/modules \
+-D BUILD_EXAMPLES=ON .. 
+
+
+cmake -D CMAKE_BUILD_TYPE=RELEASE \
+    -D CMAKE_INSTALL_PREFIX=/opt/local/ \
+    -D INSTALL_PYTHON_EXAMPLES=ON \
+    -D INSTALL_C_EXAMPLES=ON \
+    -D PYTHON_EXCUTABLE=/usr/bin/python \
+    -D OPENCV_EXTRA_MODULES_PATH=/home/rpdzkj/opencv/opencv_contrib-3.4.1/modules \
+    -D WITH_CUDA=OFF \
+    -D WITH_CUFFT=OFF \
+    -D WITH_CUBLAS=OFF \
+    -D WITH_TBB=ON \
+    -D WITH_V4L=ON \
+    -D WITH_QT=ON \
+    -D WITH_GTK=ON \
+    -D WITH_OPENGL=ON \
+    -D BUILD_EXAMPLES=ON ..
+
+Make
+Make install 
+
+
+cp /etc/ld.so.conf /etc/ld.so.conf-bak
+gedit /etc/ld.so.conf
+gedit /etc/ld.so.conf.d/opencv.conf
+
+include /usr/local/lib/
+include /home/rpdzkj/opencv/opencv-3.4.1/build/lib/
+
+include /usr/local/lib/arm-linux-gnueabihf/
+
+sudo sh -c 'echo "/usr/local/lib" > /etc/ld.so.conf.d/opencv.conf'
+
+sudo ldconfig
+
+cp /etc/bash.bashrc /etc/bash.bashrc-bak
+
+gedit /etc/bash.bashrc
+
+PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig 
+export PKG_CONFIG_PATH 
+
+source /etc/bash.bashrc
+
+ffmpeg
+./configure --enable-nonfree --enable-pic --enable-shared
+make -j8
+make install 
+

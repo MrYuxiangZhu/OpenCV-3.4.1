@@ -1,0 +1,26 @@
+sudo dnf install gcc gcc-c++ cmake ncurses-devel
+sudo dnf install gtk2 gtk2-devel gtk2-devel-docs 
+sudo dnf install libgnome-devel gnome-devel-docs
+sudo dnf install zlib glib atk pango gdk-pixbuf2 gdk-pixbuf2-devel
+sudo dnf install gtk+ gtk2-devel pkgconfig python-devel python-numpydoc 
+sudo dnf install libavc1394 libavc1394-devel libdc1394 libdc1394-devel jasper-devel
+
+sudo dnf install gcc gcc-c++ cmake ncurses-devel gtk2 gtk2-devel gtk2-devel-docs libgnome-devel gnome-devel-docs zlib glib atk pango gdk-pixbuf2 gdk-pixbuf2-devel gtk+ gtk2-devel pkgconfig python-devel python-numpydoc libavc1394 libavc1394-devel libdc1394 libdc1394-devel jasper-devel
+
+su -c 'dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm'
+
+cp /etc/ld.so.conf /etc/ld.so.conf-bak
+gedit /etc/ld.so.conf
+sudo gedit /etc/ld.so.conf.d/opencv.conf 
+/usr/local/lib64
+
+sudo ldconfig 
+
+gedit /etc/bashrc 
+
+PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib64/pkgconfig  
+export PKG_CONFIG_PATH  
+
+source /etc/bashrc 
+
+sudo updatedb

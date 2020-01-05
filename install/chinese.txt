@@ -1,0 +1,17 @@
+aptitude install locales
+dpkg-reconfigure locales 
+进入选择：  
+zh_CN GB2312  
+zh_CN.GBK GBK  
+zh_CN.UTF-8 UTF-8  
+en_US.UF8  
+
+vim /etc/default/locale  
+设置:LANG=en_US.UTF-8 
+
+apt-get install ttf-arphic-uming   
+apt-get install xfonts-intl-chinese   
+apt-get install xfonts-wqy 
+
+/更换桌面
+update-alternatives --config x-session-manager
